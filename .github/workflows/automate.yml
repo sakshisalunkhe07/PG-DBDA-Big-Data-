@@ -21,7 +21,7 @@ Resources:
       WorkerType: G.1X
       Command:
         Name: glueetl
-        ScriptLocation: s3://finalprojectinput/github/sales/Sales.py
+        ScriptLocation: s3://a-product-target/github/sales/Sales.py
       DefaultArguments:
         "--job-bookmark-option": "job-bookmark-enable"
 
@@ -39,7 +39,7 @@ Resources:
       WorkerType: G.1X
       Command:
         Name: glueetl
-        ScriptLocation: s3://finalprojectinput/github/products/Products_Glue_Job.py
+        ScriptLocation: s3://a-product-target/github/product/Products_Glue_Job.py
       DefaultArguments:
         "--job-bookmark-option": "job-bookmark-enable"
   
