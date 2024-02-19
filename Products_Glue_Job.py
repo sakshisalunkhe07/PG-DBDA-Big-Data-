@@ -20,7 +20,7 @@ RelationalDB_node1707473645992 = glueContext.create_dynamic_frame.from_options(
     connection_options={
         "useConnectionProperties": "true",
         "dbtable": "product",
-        "connectionName": "OMKAR's RDS",
+        "connectionName": "sakshi",
     },
     transformation_ctx="RelationalDB_node1707473645992",
     additional_options={"jobBookmarkKeys": ["indexing"], "jobBookmarkKeysSortOrder": "asc"}
@@ -60,7 +60,7 @@ ChangeSchema_node1707477382758 = ApplyMapping.apply(
 
 # Script generated for node Amazon S3
 AmazonS3_node1708110424343 = glueContext.getSink(
-    path="s3://finalprojectinput/product output/",
+    path="s3://a-target-output/product_output/",
     connection_type="s3",
     updateBehavior="LOG",
     partitionKeys=[],
@@ -68,7 +68,7 @@ AmazonS3_node1708110424343 = glueContext.getSink(
     transformation_ctx="AmazonS3_node1708110424343",
 )
 AmazonS3_node1708110424343.setCatalogInfo(
-    catalogDatabase="flipkart_testing", catalogTableName="Product_via_CFT"
+    catalogDatabase="project", catalogTableName="Product_via_CFT"
 )
 AmazonS3_node1708110424343.setFormat("glueparquet", compression="uncompressed")
 AmazonS3_node1708110424343.writeFrame(ChangeSchema_node1707477382758)
